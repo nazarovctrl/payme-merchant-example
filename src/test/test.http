@@ -1,0 +1,94 @@
+### Cant parse json
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+  "method": "CheckPerformTransaction",
+  "params": {
+    "amount": 1000,
+    "account": {
+      "order_id": 1
+    }
+  }
+}
+
+### CreateTransaction
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 13545,
+  "method": "CreateTransaction",
+  "params": {
+    "account": {
+      "order_id": "1"
+    },
+    "amount": 1000,
+    "id": "6688d8401da9c7eba019cbfd",
+    "time": 1720244288860
+  }
+}
+
+### PerformTransaction
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 13548,
+  "method": "PerformTransaction",
+  "params": {
+    "id": "6688d8401da9c7eba019cbfd"
+  }
+}
+
+### CancelTransaction
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 13551,
+  "method": "CancelTransaction",
+  "params": {
+    "id": "6688d8401da9c7eba019cbfd",
+    "reason": 3
+  }
+}
+
+
+#### Check
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+    "jsonrpc": "2.0",
+    "id": 13550,
+    "method": "CheckTransaction",
+    "params": {
+        "id": "6688d8401da9c7eba019cbfd"
+    }
+}
+
+#### get
+POST http://localhost:8081/api/payme/merchant
+Authorization: Basic UGF5Y29tOnd4WEJUbj9WMHV3UDBPQ0phNXBLdSVEd2JvI2FFYjNQOFBoVA==
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 11778,
+  "method": "GetStatement",
+  "params": {
+    "from": 1719854418428,
+    "to": 1720244288860
+  }
+}
+
+
